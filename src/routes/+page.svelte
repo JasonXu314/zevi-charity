@@ -7,9 +7,9 @@
 	<Navbar />
 
 	<div class="video-row">
-		<div class="video">
-			<div>Video goes here</div>
-		</div>
+		<video src="/video.mp4" width="400">
+			<source src="/video.mp4" type="mp4" />
+		</video>
 	</div>
 
 	<section>

@@ -7,6 +7,11 @@
 			<a href="/impact">Impact</a>
 		</li>
 	</ul>
+	<ul>
+		<li>
+			<a href="/donate">Donate</a>
+		</li>
+	</ul>
 </nav>
 
 <style>
