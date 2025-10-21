@@ -7,7 +7,7 @@
 	<Navbar />
 
 	<div class="video-row">
-		<video src="/video.mp4" width="400">
+		<video src="/video.mp4" width="400" controls>
 			<source src="/video.mp4" type="mp4" />
 		</video>
 	</div>
