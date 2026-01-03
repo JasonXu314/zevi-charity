@@ -13,28 +13,26 @@
 	</div>
 
 	<section>
-		<Flame />
-		<span>
-			Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores, ipsum! Voluptatibus quas, veritatis iusto aspernatur consequatur quam tenetur et
-			illum alias adipisci earum vel impedit minima dolores, dignissimos magnam ex laboriosam corporis quasi temporibus autem ad itaque! Blanditiis
-			numquam nulla eveniet quae labore, repellat, quod cum exercitationem error, tempore dignissimos.
-		</span>
+		<Flame img="food.jpeg" />
+		<span class="text">Geula Charity brings together a network of donors to provide food for widows of the north.</span>
 	</section>
 	<section>
-		<Flame />
-		<span>
-			Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores, ipsum! Voluptatibus quas, veritatis iusto aspernatur consequatur quam tenetur et
-			illum alias adipisci earum vel impedit minima dolores, dignissimos magnam ex laboriosam corporis quasi temporibus autem ad itaque! Blanditiis
-			numquam nulla eveniet quae labore, repellat, quod cum exercitationem error, tempore dignissimos.
-		</span>
+		<Flame img="support.jpeg" />
+		<span class="text">We provide food for families struggling financially in order that no soul in Israel should go hungry.</span>
 	</section>
 	<section>
-		<Flame />
-		<span>
-			Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores, ipsum! Voluptatibus quas, veritatis iusto aspernatur consequatur quam tenetur et
-			illum alias adipisci earum vel impedit minima dolores, dignissimos magnam ex laboriosam corporis quasi temporibus autem ad itaque! Blanditiis
-			numquam nulla eveniet quae labore, repellat, quod cum exercitationem error, tempore dignissimos.
-		</span>
+		<Flame img="support2.jpeg" />
+		<span class="text"
+			>We assist businesses negatively impacted by the more than two year long War of Iron Swords (October 7th, 2023 &#8212; present).</span
+		>
+	</section>
+	<section>
+		<Flame img="" />
+		<span class="text">We are researching forming a new program to provide supervised interest-free loans to those who need them.</span>
+	</section>
+	<section>
+		<Flame img="shabbat.png" />
+		<span class="text">We organize Shabbat (Sabbath) meals that bring light and warmth to the northern Israeli community.</span>
 	</section>
 </main>
 
@@ -49,19 +47,6 @@
 			display: flex;
 			flex-direction: row;
 			justify-content: space-around;
-
-			.video {
-				height: 422px;
-				width: 750px;
-				background: blue;
-				display: flex;
-				flex-direction: column;
-				justify-content: space-around;
-
-				div {
-					text-align: center;
-				}
-			}
 		}
 
 		section {
@@ -71,6 +56,10 @@
 			gap: 2em;
 			flex-basis: content;
 			align-items: center;
+
+			.text {
+				font-size: 32px;
+			}
 		}
 	}
 </style>

@@ -9,7 +9,7 @@
 	</ul>
 	<ul>
 		<li>
-			<a href="/donate">Donate</a>
+			<a href="https://donate.stripe.com/8x2aEW3QL2Z2eOz2o00ZW00" target="_blank" rel="noreferrer noopener">Donate</a>
 		</li>
 	</ul>
 </nav>
