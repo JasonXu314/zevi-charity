@@ -1,7 +1,10 @@
 <nav>
 	<ul>
 		<li>
-			<a href="/">Geula Charity</a>
+			<a href="/">Logo Here</a>
+		</li>
+		<li>
+			<a href="/">Home</a>
 		</li>
 		<li>
 			<a href="/impact">Impact</a>
