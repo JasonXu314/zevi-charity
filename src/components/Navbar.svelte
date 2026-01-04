@@ -6,6 +6,9 @@
 		<li>
 			<a href="/impact">Impact</a>
 		</li>
+		<li>
+			<a href="/people">People</a>
+		</li>
 	</ul>
 	<ul>
 		<li>
