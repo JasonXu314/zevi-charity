@@ -19,7 +19,7 @@
 	<Navbar />
 
 	<div class="video-row">
-		<video bind:this={video} src="/b-roll.mp4" autoplay>
+		<video bind:this={video} src="https://www.pexels.com/download/video/3881018/" autoplay>
 			<source src="/b-roll.mp4" type="mp4" />
 		</video>
 	</div>
