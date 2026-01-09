@@ -4,24 +4,18 @@
 
 	let video: HTMLVideoElement | null = $state(null);
 
-	$effect(() => {
+	function play() {
 		if (video) {
 			video.play();
-			video.addEventListener('ended', () => {
-				video!.currentTime = 0;
-				video!.play();
-			});
 		}
-	});
+	}
 </script>
 
 <main>
 	<Navbar />
 
 	<div class="video-row">
-		<video bind:this={video} src="https://www.pexels.com/download/video/3881018/" autoplay>
-			<source src="/b-roll.mp4" type="mp4" />
-		</video>
+		<video bind:this={video} src="https://www.pexels.com/download/video/3881018" onloadeddata={play} loop muted />
 	</div>
 
 	<section>
