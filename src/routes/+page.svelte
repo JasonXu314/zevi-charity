@@ -1,14 +1,26 @@
 <script lang="ts">
 	import Flame from '../components/Flame.svelte';
 	import Navbar from '../components/Navbar.svelte';
+
+	let video: HTMLVideoElement | null = $state(null);
+
+	$effect(() => {
+		if (video) {
+			video.play();
+			video.addEventListener('ended', () => {
+				video!.currentTime = 0;
+				video!.play();
+			});
+		}
+	});
 </script>
 
 <main>
 	<Navbar />
 
 	<div class="video-row">
-		<video src="/video.mp4" width="400" controls>
-			<source src="/video.mp4" type="mp4" />
+		<video bind:this={video} src="/b-roll.mp4" autoplay>
+			<source src="/b-roll.mp4" type="mp4" />
 		</video>
 	</div>
 
@@ -44,9 +56,16 @@
 		overflow-x: hidden;
 
 		.video-row {
+			width: 100vw;
+			height: 500px;
+			overflow: hidden;
 			display: flex;
 			flex-direction: row;
-			justify-content: space-around;
+			align-items: center;
+
+			video {
+				width: 100%;
+			}
 		}
 
 		section {
