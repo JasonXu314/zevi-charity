@@ -15,7 +15,7 @@
 	</ul>
 	<ul>
 		<li>
-			<a href="https://donate.stripe.com/8x2aEW3QL2Z2eOz2o00ZW00" target="_blank" rel="noreferrer noopener">Donate</a>
+			<a href="/donate">Donate</a>
 		</li>
 	</ul>
 </nav>
