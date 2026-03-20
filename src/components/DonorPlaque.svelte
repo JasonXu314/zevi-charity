@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Star } from '@lucide/svelte';
+	import DavidStar from './DavidStar.svelte';
 
 	const { name, dedication, tier }: { name: string; dedication?: string; tier: 'gold' | 'silver' | 'bronze' } = $props();
 
@@ -22,16 +22,16 @@
 	]} shadow-plaque transition-all duration-500 hover:shadow-lg hover:scale-[1.02] animate-scale-in"
 >
 	<div class="absolute top-3 left-3 {accentStyles[tier]}">
-		<Star class="w-4 h-4 fill-current" />
+		<DavidStar />
 	</div>
 	<div class="absolute top-3 right-3 {accentStyles[tier]}">
-		<Star class="w-4 h-4 fill-current" />
+		<DavidStar />
 	</div>
 	<div class="absolute bottom-3 left-3 {accentStyles[tier]}">
-		<Star class="w-4 h-4 fill-current" />
+		<DavidStar />
 	</div>
 	<div class="absolute bottom-3 right-3 {accentStyles[tier]}">
-		<Star class="w-4 h-4 fill-current" />
+		<DavidStar />
 	</div>
 
 	<div class="text-center space-y-3">
