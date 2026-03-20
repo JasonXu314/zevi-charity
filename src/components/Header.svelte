@@ -58,18 +58,18 @@
 					<a
 						href="/"
 						onclick={() => (mobileMenuOpen = false)}
-						class="px-4 py-3 rounded-lg text-sm font-medium transition-colors text-muted-foreground hover:bg-muted"
+						class="px-4 py-3 rounded-lg text-sm font-medium transition-colors text-muted-foreground hover:bg-muted cursor-pointer"
 					>
 						Home
 					</a>
 					<button
 						onclick={() => scrollToSection('donors')}
-						class="px-4 py-3 rounded-lg text-sm font-medium transition-colors text-muted-foreground hover:bg-muted text-left"
+						class="px-4 py-3 rounded-lg text-sm font-medium transition-colors text-muted-foreground hover:bg-muted text-left cursor-pointer"
 					>
 						Our Donors
 					</button>
 					<a href="/donate" target="_blank" rel="noopener noreferrer" onclick={() => (mobileMenuOpen = false)} class="mt-2">
-						<Button variant="hero" class="w-full">
+						<Button variant="hero" class="w-full cursor-pointer">
 							<Heart class="w-4 h-4" />
 							Donate Now
 						</Button>
