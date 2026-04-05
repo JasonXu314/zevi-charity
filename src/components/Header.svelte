@@ -29,7 +29,10 @@
 			<nav class="hidden md:flex items-center gap-8">
 				<a href="/" class="text-sm font-medium transition-colors text-muted-foreground hover:text-foreground">Home</a>
 				<a href="/impact" class="text-sm font-medium transition-colors text-muted-foreground hover:text-foreground">Impact</a>
-				<button onclick={() => scrollToSection('donors')} class="text-sm font-medium transition-colors text-muted-foreground hover:text-foreground">
+				<button
+					onclick={() => scrollToSection('donors')}
+					class="text-sm font-medium transition-colors text-muted-foreground hover:text-foreground cursor-pointer"
+				>
 					Our Donors
 				</button>
 			</nav>
