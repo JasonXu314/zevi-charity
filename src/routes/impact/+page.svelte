@@ -44,7 +44,7 @@
 	<main class="flex-1">
 		<section class="py-16 md:py-24 bg-navy relative overflow-hidden">
 			<div class="absolute inset-0 opacity-10">
-				<div class="absolute inset-0 bg-gradient-to-br from-gold/30 to-transparent" />
+				<div class="absolute inset-0 bg-gradient-to-br from-gold/30 to-transparent"></div>
 			</div>
 			<div class="container mx-auto px-4 relative z-10 text-center">
 				<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/20 text-gold text-sm font-medium mb-6">

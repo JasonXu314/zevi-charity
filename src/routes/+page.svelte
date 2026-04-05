@@ -71,7 +71,14 @@
 	<main class="flex-1">
 		<section class="relative py-20 md:py-32 overflow-hidden">
 			<div class="absolute inset-0">
-				<img src="hero.jpg" alt="The ancient city of Tsfat at sunset" class="w-full h-full object-cover" />
+				<video
+					class="w-full h-full object-cover"
+					bind:this={video}
+					src="https://www.pexels.com/download/video/30192866/"
+					onloadeddata={play}
+					loop
+					muted
+				></video>
 				<div class="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/80 to-navy/60"></div>
 			</div>
 
@@ -211,69 +218,3 @@
 
 	<Footer />
 </div>
-
-<!-- <main>
-	<Navbar />
-
-	<div class="video-row">
-		<video bind:this={video} src="https://www.pexels.com/download/video/3881018" onloadeddata={play} loop muted />
-	</div>
-
-	<section>
-		<Flame img="food.jpeg" />
-		<span class="text">Geula Charity brings together a network of donors to provide food for widows of the north.</span>
-	</section>
-	<section>
-		<Flame img="support.jpeg" />
-		<span class="text">We provide food for families struggling financially in order that no soul in Israel should go hungry.</span>
-	</section>
-	<section>
-		<Flame img="support2.jpeg" />
-		<span class="text"
-			>We assist businesses negatively impacted by the more than two year long War of Iron Swords (October 7th, 2023 &#8212; present).</span
-		>
-	</section>
-	<section>
-		<Flame img="" />
-		<span class="text">We are researching forming a new program to provide supervised interest-free loans to those who need them.</span>
-	</section>
-	<section>
-		<Flame img="shabbat.png" />
-		<span class="text">We organize Shabbat (Sabbath) meals that bring light and warmth to the northern Israeli community.</span>
-	</section>
-</main> -->
-
-<style lang="scss">
-	// main {
-	// 	height: 100%;
-	// 	color: white;
-	// 	background: #1f1f1f;
-	// 	overflow-x: hidden;
-
-	// 	.video-row {
-	// 		width: 100vw;
-	// 		height: 500px;
-	// 		overflow: hidden;
-	// 		display: flex;
-	// 		flex-direction: row;
-	// 		align-items: center;
-
-	// 		video {
-	// 			width: 100%;
-	// 		}
-	// 	}
-
-	// 	section {
-	// 		display: flex;
-	// 		flex-direction: row;
-	// 		margin: 2em 4em;
-	// 		gap: 2em;
-	// 		flex-basis: content;
-	// 		align-items: center;
-
-	// 		.text {
-	// 			font-size: 32px;
-	// 		}
-	// 	}
-	// }
-</style>
