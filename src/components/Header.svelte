@@ -38,7 +38,7 @@
 			</nav>
 
 			<div class="hidden md:block">
-				<a href="/donate" target="_blank" rel="noopener noreferrer">
+				<a href="/donate">
 					<Button variant="hero" size="lg">
 						<Heart class="w-4 h-4" />
 						Donate Now
@@ -71,7 +71,7 @@
 					>
 						Our Donors
 					</button>
-					<a href="/donate" target="_blank" rel="noopener noreferrer" onclick={() => (mobileMenuOpen = false)} class="mt-2">
+					<a href="/donate" onclick={() => (mobileMenuOpen = false)} class="mt-2">
 						<Button variant="hero" class="w-full cursor-pointer">
 							<Heart class="w-4 h-4" />
 							Donate Now
