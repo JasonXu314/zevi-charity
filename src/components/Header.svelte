@@ -65,6 +65,13 @@
 					>
 						Home
 					</a>
+					<a
+						href="/people"
+						onclick={() => (mobileMenuOpen = false)}
+						class="px-4 py-3 rounded-lg text-sm font-medium transition-colors text-muted-foreground hover:bg-muted cursor-pointer"
+					>
+						People
+					</a>
 					<button
 						onclick={() => scrollToSection('donors')}
 						class="px-4 py-3 rounded-lg text-sm font-medium transition-colors text-muted-foreground hover:bg-muted text-left cursor-pointer"
