@@ -165,8 +165,10 @@
 							>
 								<div class="text-center p-8">
 									<Heart class="w-20 h-20 text-gold mx-auto mb-4" />
-									<p class="font-serif text-2xl font-semibold text-foreground">"Whoever saves a life, saves an entire world."</p>
-									<p class="text-muted-foreground mt-2 text-sm">— Talmud</p>
+									<p class="font-serif text-2xl font-semibold text-foreground">
+										"For anybody who preserves a single life it is counted as if he preserved an entire world."
+									</p>
+									<p class="text-muted-foreground mt-2 text-sm">— Sanhedrin Ch.4, Talmud Yerushalmi</p>
 								</div>
 							</div>
 						</div>
