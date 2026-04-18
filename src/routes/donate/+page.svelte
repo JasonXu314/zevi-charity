@@ -68,6 +68,14 @@
 
 			<Button>Donate</Button>
 		</form>
+
+		<div class="flex flex-col w-2/5 m-auto mt-4">
+			<p>
+				Or, <a class="underline text-sky-600" target="_blank" rel="noopener noreferrer" href="https://donate.stripe.com/8x2aEW3QL2Z2eOz2o00ZW00">
+					donate here
+				</a>.
+			</p>
+		</div>
 	</main>
 </div>
 
