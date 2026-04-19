@@ -42,7 +42,7 @@
 			tier: 'gold'
 		},
 		{
-			name: 'The Seamen Family',
+			name: 'The Seaman Family',
 			dedication: 'In recognition of their compassion and commitment to our community',
 			tier: 'gold'
 		},
