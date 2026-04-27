@@ -35,9 +35,9 @@
 
 	interface ButtonProps extends HTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {}
 
-	const { variant, size, class: className, children }: ButtonProps = $props();
+	const { variant, size, class: className, children, ...rest }: ButtonProps = $props();
 </script>
 
-<button class={cn(buttonVariants({ variant, size, className }))}>
+<button class={cn(buttonVariants({ variant, size, className }))} {...rest}>
 	{@render children?.()}
 </button>

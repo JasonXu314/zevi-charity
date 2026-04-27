@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { PUBLIC_STRIPE_KEY } from '$env/static/public';
+	import { PUBLIC_LOCATION, PUBLIC_STRIPE_KEY } from '$env/static/public';
 	import { loadStripe, type Stripe } from '@stripe/stripe-js';
 	import Button from '../../components/Button.svelte';
 	import CurrencyInput from '../../components/CurrencyInput.svelte';
@@ -11,17 +11,20 @@
 		amount: number = $state(0),
 		paying: boolean = $state(false),
 		email: string = $state(''),
-		cancel: (() => void) | null = $state(null);
+		name: string = $state(''),
+		message: string = $state(''),
+		cancel: (() => void) | null = $state(null),
+		confirm: (() => void) | null = $state(null);
 
 	function donate(evt: SubmitEvent): void {
 		evt.preventDefault();
 
-		fetch('/api/donate', { method: 'POST' })
+		fetch('/api/donate', { method: 'POST', body: JSON.stringify({ amount }) })
 			.then((res) => res.json())
-			.then(({ secret }) => {
+			.then(({ clientSecret, id }) => {
 				if (stripe) {
 					const elements = stripe.elements({
-						clientSecret: secret,
+						clientSecret,
 						appearance: {
 							theme: 'night',
 							variables: {
@@ -38,6 +41,19 @@
 					paying = true;
 					cancel = () => {
 						paymentElement.destroy();
+						cancel = null;
+						confirm = null;
+						paying = false;
+						fetch(`/api/donate?id=${id}`, { method: 'DELETE' });
+					};
+					confirm = () => {
+						console.log('hi');
+						stripe!.confirmPayment({
+							elements,
+							confirmParams: {
+								return_url: `${PUBLIC_LOCATION}/api/return?name=${name}message=${message}`
+							}
+						});
 					};
 				}
 			});
@@ -60,10 +76,10 @@
 		<form class="flex flex-col gap-4 w-2/5 m-auto" onsubmit={donate}>
 			<Input label="Email" required bind:value={email} />
 			<CurrencyInput label="Amount" required bind:value={amount} />
-			<Input label="Name" />
+			<Input label="Name" bind:value={name} />
 			<label>
 				Message
-				<textarea class="block w-full border border-input rounded-md" rows={6}></textarea>
+				<textarea class="block w-full border border-input rounded-md" rows={6} bind:value={message}></textarea>
 			</label>
 
 			<Button>Donate</Button>
@@ -79,8 +95,13 @@
 	</main>
 </div>
 
-<div class="modal-bg" role="none" class:open={paying} onclick={cancel}>
-	<div class="modal" bind:this={stripeDiv}></div>
+<div class="modal-bg" role="none" class:open={paying} onclick={(evt) => evt.target === evt.currentTarget && cancel?.()}>
+	<div class="modal flex flex-col gap-4">
+		<div class="stripe" bind:this={stripeDiv}></div>
+		{#if confirm !== null}
+			<Button onclick={() => confirm?.()}>Confirm</Button>
+		{/if}
+	</div>
 </div>
 
 <style lang="scss">
