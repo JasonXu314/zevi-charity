@@ -26,11 +26,11 @@
 					const elements = stripe.elements({
 						clientSecret,
 						appearance: {
-							theme: 'night',
+							theme: 'stripe',
 							variables: {
-								colorPrimary: '#7cd391',
-								colorBackground: '#1f1f1f',
-								colorText: 'white'
+								colorPrimary: 'hsl(38 80% 50%)',
+								colorBackground: 'hsl(40 33% 98%)',
+								colorText: 'black'
 							}
 						}
 					});
