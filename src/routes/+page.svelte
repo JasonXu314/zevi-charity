@@ -1,12 +1,15 @@
 <script lang="ts">
 	import { ArrowRight, Award, Heart, Store, Users, Utensils } from '@lucide/svelte';
+	import { onMount } from 'svelte';
 	import Button from '../components/Button.svelte';
 	import DonorPlaque from '../components/DonorPlaque.svelte';
 	import Footer from '../components/Footer.svelte';
 	import Header from '../components/Header.svelte';
 	import ImpactCard from '../components/ImpactCard.svelte';
+	import type { Donor } from '../dbutils';
 
-	let video: HTMLVideoElement | null = $state(null);
+	let video: HTMLVideoElement | null = $state(null),
+		donors: Promise<Donor[]> = $state(Promise.resolve([]));
 
 	function play() {
 		if (video) {
@@ -35,34 +38,7 @@
 		}
 	];
 
-	const donors = [
-		{
-			name: 'The Pack-Devinki Family',
-			dedication: 'For their generous and continued support of Tsfat families',
-			tier: 'gold'
-		},
-		{
-			name: 'The Seaman Family',
-			dedication: 'In recognition of their compassion and commitment to our community',
-			tier: 'gold'
-		},
-		{
-			name: 'The Shragowitz Family',
-			tier: 'gold'
-		},
-		{
-			name: 'Chaya Masha Hleap',
-			tier: 'gold'
-		},
-		{
-			name: 'Dr. and Mrs Noveck',
-			tier: 'gold'
-		},
-		{
-			name: 'Jerry Shapiro',
-			tier: 'gold'
-		}
-	] as const;
+	onMount(() => (donors = fetch('/api/donors').then((res) => res.json())));
 </script>
 
 <div class="min-h-screen flex flex-col">
@@ -192,11 +168,17 @@
 					</div>
 
 					<div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
-						{#each donors as donor, i}
-							<div class="opacity-0" style="animation: scale-in 0.5s ease-out forwards; animation-delay: {i * 200}ms">
-								<DonorPlaque {...donor} />
-							</div>
-						{/each}
+						{#await donors}
+							Loading donors...
+						{:then donors}
+							{#each donors as donor, i}
+								<div class="opacity-0" style="animation: scale-in 0.5s ease-out forwards; animation-delay: {i * 200}ms">
+									<DonorPlaque {...donor} />
+								</div>
+							{/each}
+						{:catch err}
+							Error loading donors: <p>{err}</p>
+						{/await}
 					</div>
 				</div>
 			</div>

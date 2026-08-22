@@ -36,6 +36,7 @@
 		"@stripe/stripe-js": "^8.6.1",
 		"@tailwindcss/vite": "^4.2.0",
 		"class-variance-authority": "^0.7.1",
+		"mongodb": "^7.5.0",
 		"stripe": "^20.1.0",
 		"tailwind-merge": "^3.5.0",
 		"tailwindcss": "^4.2.0",

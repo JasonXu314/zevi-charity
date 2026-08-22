@@ -1,8 +1,5 @@
-import { STRIPE_KEY } from '$env/static/private';
 import type { RequestHandler } from '@sveltejs/kit';
-import Stripe from 'stripe';
-
-const stripe = new Stripe(STRIPE_KEY);
+import { stripe } from '../../../stripeutils';
 
 export const POST: RequestHandler = async (evt) => {
 	const body: { amount: number } = await evt.request.json();
